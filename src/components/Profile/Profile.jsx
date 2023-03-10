@@ -1,7 +1,15 @@
 import css from './Profile.module.css';
 import PropTypes from 'prop-types';
 
-export const Profile = ({ username, tag, location, avatar, stats }) => {
+/**
+ * User Profile Component
+ * @param {username} - name and surname of current user
+ * @param {tag} - tag of current user
+ * @param {location} - city and country
+ * @param {avatar} - link to avatar image
+ * @param {stats} - object with user stats (likes, views, followers)
+ */
+export function Profile({ username, tag, location, avatar, stats }) {
   return (
     <div className={css.profile}>
       <div className={css.description}>
@@ -26,7 +34,7 @@ export const Profile = ({ username, tag, location, avatar, stats }) => {
       </ul>
     </div>
   );
-};
+}
 
 Profile.propTypes = {
   username: PropTypes.string.isRequired,
