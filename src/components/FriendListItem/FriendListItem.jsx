@@ -5,13 +5,11 @@ import PropTypes from 'prop-types';
  * Generate single item from friendlist
  * @param {friend} - object containing users friend data to be used
  */
-export function FriendListItem({ friend }) {
-  const { avatar, name, isOnline, id } = friend;
-
+export function FriendListItem({ avatar, name, isOnline }) {
   const status_color = isOnline ? 'green' : 'red';
 
   return (
-    <li key={id} className={css.item}>
+    <li className={css.item}>
       <span
         className={css.status}
         style={{ backgroundColor: status_color }}
@@ -23,10 +21,7 @@ export function FriendListItem({ friend }) {
 }
 
 FriendListItem.propTypes = {
-  friend: PropTypes.shape({
-    avatar: PropTypes.string,
-    name: PropTypes.string,
-    isOnline: PropTypes.bool,
-    id: PropTypes.number,
-  }),
+  avatar: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  isOnline: PropTypes.bool.isRequired,
 };
