@@ -1,6 +1,8 @@
 .profile {
   width: 250px;
   height: auto;
+  align-self: flex-start;
+  margin-top: 20px;
 
   background-color: white;
 
